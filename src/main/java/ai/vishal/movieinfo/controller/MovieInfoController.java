@@ -14,7 +14,6 @@ public class MovieInfoController {
 
     @GetMapping("/movie/{movieId}")
     public Movie getMovieInfo(@PathVariable String movieId){
-        movieRepo.save(new Movie(movieId,"Horror Movie","1920 evil returns"));
         return movieRepo.findById(movieId).orElseThrow();
     }
 }
